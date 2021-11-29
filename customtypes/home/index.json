@@ -1,0 +1,53 @@
+{
+  "id": "home",
+  "label": "home",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "menuLinks": {
+        "config": {
+          "label": "menu_links",
+          "placeholder": "",
+          "fields": {
+            "link": {
+              "config": {
+                "label": "link",
+                "placeholder": "",
+                "select": "web",
+                "allowTargetBlank": false
+              },
+              "type": "Link"
+            },
+            "linkLabel": {
+              "config": {
+                "label": "linkLabel",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph"
+              },
+              "type": "StructuredText"
+            }
+          }
+        },
+        "type": "Group"
+      },
+      "pageheading": {
+        "type": "StructuredText",
+        "config": {
+          "single": "heading1",
+          "label": "pageHeading",
+          "placeholder": "ben"
+        }
+      },
+      "jobfields": {
+        "type": "StructuredText",
+        "config": {
+          "single": "hyperlink,list-item",
+          "label": "jobfields",
+          "placeholder": "asdf"
+        }
+      }
+    }
+  }
+}

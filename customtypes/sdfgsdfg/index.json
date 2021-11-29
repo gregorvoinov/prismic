@@ -1,0 +1,43 @@
+{
+  "id": "sdfgsdfg",
+  "label": "sdfgsdfg",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "uid": {
+        "config": {
+          "label": "uid",
+          "placeholder": ""
+        },
+        "type": "UID"
+      },
+      "background": {
+        "config": {
+          "label": "background",
+          "constraint": {},
+          "thumbnails": []
+        },
+        "type": "Image"
+      },
+      "header": {
+        "config": {
+          "label": "header",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+        },
+        "type": "StructuredText"
+      },
+      "link": {
+        "config": {
+          "label": "link",
+          "placeholder": "",
+          "select": "web",
+          "allowTargetBlank": false
+        },
+        "type": "Link"
+      }
+    }
+  }
+}

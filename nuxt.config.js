@@ -1,3 +1,10 @@
+import smConfig from "./sm.json";
+import { getStoriesPaths } from "slice-machine-ui/helpers/storybook";
+
+if (!smConfig.apiEndpoint) {
+  console.warn("Looks like Slice Machine hasn't been bootstraped already.\nCheck the `Getting Started` section of the README file :)");
+}
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -43,6 +50,15 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
+    ["@nuxtjs/prismic", {
+      endpoint: smConfig.apiEndpoint || "",
+      apiOptions: {
+        routes: [{
+          type: "page",
+          path: "/:uid"
+        }]
+      }
+    }], ["nuxt-sm"]
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -54,8 +70,17 @@ export default {
       lang: 'en'
     }
   },
-
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+    transpile: ['vue-slicezone', 'nuxt-sm']
+  },
+  storybook: {
+    // This is a bug with `getStoriesPaths` and Nuxt that is awaiting to be fixed
+    stories: [...getStoriesPaths().map(path => path.replace("../", "~/"))]
+  },
+  // This is a bug with `getStoriesPaths` and Nuxt that is awaiting to be fixed
+  ignore: [...getStoriesPaths().map(path => path.replace("../", "~/"))],
+  generate: {
+    fallback: '404.html' // Netlify reads a 404.html, Nuxt will load as an SPA
   }
 }

@@ -1,0 +1,27 @@
+{
+  "id": "67e769ee-80b1-46be-99e9-c1927f21a442",
+  "uid": "dicta-ut-unde",
+  "type": "sdfgsdfg",
+  "data": {
+    "background": {
+      "dimensions": {
+        "width": 900,
+        "height": 500
+      },
+      "alt": "Placeholder image",
+      "copyright": null,
+      "url": "https://images.unsplash.com/photo-1607582278038-6bebbd4d7b72?w=900&h=500&fit=crop"
+    },
+    "header": [
+      {
+        "type": "paragraph",
+        "text": "Excepteur velit labore aute.",
+        "spans": []
+      }
+    ],
+    "link": {
+      "link_type": "Web",
+      "url": "https://slicemachine.dev"
+    }
+  }
+}
