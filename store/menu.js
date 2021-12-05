@@ -15,7 +15,7 @@ export const actions = {
   async fetchMenu({ commit }, $prismic) {
     try {
       const menu = (await $prismic.api.getSingle('home')).data
-      
+      console.log(menu)
       commit('SET_MENU', menu)
     } catch (e) {
 

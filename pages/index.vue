@@ -8,6 +8,7 @@ export default {
     try{
       // Query to get the home page content
       const homepage = (await $prismic.api.getSingle('home')).data
+      console.log('ydfsdfg', homepage)
       return {
         // Page content
         banner: homepage.homepage_banner[0],
@@ -19,8 +20,8 @@ export default {
       // error({ statusCode: 404, message: 'Page not found' })
     }
   },
-  // async middleware({ store, $prismic }) {
-  //   await store.dispatch('menu/fetchMenu', $prismic)
-  // }
+  async middleware({ store, $prismic }) {
+    await store.dispatch('menu/fetchMenu', $prismic)
+  }
 }
 </script>
