@@ -1,5 +1,7 @@
 <template>
-  <Tutorial/>
+  <div>
+    {{pageheading}}
+  </div>
 </template>
 
 <script>
@@ -8,20 +10,17 @@ export default {
     try{
       // Query to get the home page content
       const homepage = (await $prismic.api.getSingle('home')).data
-      console.log('ydfsdfg', homepage)
       return {
         // Page content
-        banner: homepage.homepage_banner[0],
-        // Set slices as variable
-        slices: homepage.page_content
+        pageheading: homepage.pageheading[0].text,
       }
     } catch (e) {
       console.log(e)
       // error({ statusCode: 404, message: 'Page not found' })
     }
   },
-  async middleware({ store, $prismic }) {
-    await store.dispatch('menu/fetchMenu', $prismic)
-  }
+  // async middleware({ store, $prismic }) {
+  //   await store.dispatch('menu/fetchMenu', $prismic)
+  // }
 }
 </script>
